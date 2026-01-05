@@ -12,3 +12,14 @@ def calculate_bill(units):
         bill = (100 * 2) + (100 * 3) + ((units - 200) * 5)
         
     return bill
+if __name__ == "__main__":
+    print("--- Electricity Bill Calculator ---")
+    try:
+        units_input = int(input("Enter number of units consumed: "))
+        if units_input < 0:
+            print("Units cannot be negative.")
+        else:
+            total_bill = calculate_bill(units_input)
+            print(f"Total Bill Amount: {total_bill}")
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
